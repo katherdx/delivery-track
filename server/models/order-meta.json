@@ -1,0 +1,82 @@
+{
+  "name": "orderMeta",
+  "plural": "orderMeta",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "createdAt": "createdOn",
+      "updatedAt": "updatedOn",
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": false
+    }
+  },
+  "properties": {
+    "orderId": {
+      "type": "string",
+      "required": true
+    },
+    "address1": {
+      "type": "string",
+      "required": true
+    },
+    "address2": {
+      "type": "string"
+    },
+    "landmark": {
+      "type": "string",
+      "required": true
+    },
+    "state": {
+      "type": "string",
+      "required": true,
+      "default": "tamil-nadu"
+    },
+    "city": {
+      "type": "string",
+      "required": true,
+      "default": "chennai"
+    },
+    "pincode": {
+      "type": "string",
+      "required": true
+    },
+    "geoLocation": {
+      "type": "geopoint",
+      "required": false
+    },
+    "price": {
+      "type": "number",
+      "required": true
+    },
+    "status": {
+      "type": "string",
+      "default": "open"
+    },
+    "customerPhone": {
+      "type": "string",
+      "required": true
+    },
+    "alternateCustomerPhone": {
+      "type": "string",
+      "required": false
+    },
+    "orderMeta": {
+      "type": "string",
+      "required": true
+    },
+    "isPaid": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,59 @@
+{
+  "name": "delivery",
+  "plural": "delivery",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "createdAt": "createdOn",
+      "updatedAt": "updatedOn",
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": false
+    }
+  },
+  "properties": {
+    "sequence": {
+      "type": "number",
+      "required": true,
+      "default": 1
+    },
+    "deliveryDate": {
+      "type": "date",
+      "required": true
+    },
+    "userId": {
+      "type": "string",
+      "required": true
+    },
+    "orderMetaId": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "userId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "order": {
+      "type": "belongsTo",
+      "model": "orderMeta",
+      "foreignKey": "orderMetaId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+
+  },
+  "acls": [],
+  "methods": {}
+}

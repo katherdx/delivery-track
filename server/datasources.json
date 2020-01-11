@@ -1,0 +1,17 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "datasource": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "",
+    "database": "delivery",
+    "password": "",
+    "name": "datasource",
+    "user": "",
+    "useNewUrlParser": true,
+    "connector": "mongodb"
+  }
+}
